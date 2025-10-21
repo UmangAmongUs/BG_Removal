@@ -2,19 +2,11 @@ import { Webhook } from "svix"
 import userModel from "../models/userModel.js"
 
 const clerkWebhooks = async (req,res) => {
-    console.log("**************************")
-
     
 
-    // const rawBody = req.body.toString("utf8")
     try {
-        // const wh = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
+
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
-        // const evt = await wh.verify(rawBody,{
-        //     "svix-id":req.headers["svix-id"],
-        //     "svix-timestamp":req.headers["svix-timestamp"],
-        //     "svix-signature":req.headers["svix-signature"],
-        // })
         
         await whook.verify(JSON.stringify(req.body),{
             "svix-id":req.headers["svix-id"],
@@ -23,9 +15,7 @@ const clerkWebhooks = async (req,res) => {
         })
         
         const {data,type} = req.body
-        // console.log(type,data,"djhgajk")
-        // const data = evt.data
-        // const type = evt.type
+
         switch(type){
             case "user.created":{
                 const userData = {
@@ -42,7 +32,7 @@ const clerkWebhooks = async (req,res) => {
 
             case "user.updated":{
                 const userData = {
-                    email : data.emaol_addresses[0].email_address,
+                    email : data.email_addresses[0].email_address,
                     firstName : data.first_name,
                     lastName : data.last_name,
                     photo : data.image_url

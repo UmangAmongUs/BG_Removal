@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    clerkid : {type:String , require:true , unique:true},
+    clerkId : {type:String , require:true , unique:true},
     email : {type:String , require:true , unique:true},
     photo : {type:String , require:true},
     firstName : {type:String},

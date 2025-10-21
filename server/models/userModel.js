@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     lastName : {type:String},
     creditBalance : {type:Number , default:5}
 })
-
-const userModel = mongoose.Model.user || mongoose.model("user",userSchema)
+const COLLECTION_NAME = "in bg removal"
+const userModel = mongoose.Model.user || mongoose.model("user",userSchema,COLLECTION_NAME)
 
 export default userModel

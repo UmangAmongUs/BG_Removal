@@ -10,11 +10,12 @@ const app = express()
 //initialising middleware
 app.use(express.json())
 app.use(cors())
-
+app.use('/api/user',userRouter)
 //connecting to database
 await connectDB()
 
 app.get('/',(req,res)=>res.send("API Working"))
-app.use('/api/user',userRouter)
+// app.post("/api/user" , userRouter)
+
 
 app.listen(PORT,()=>console.log("Server running on "+PORT))

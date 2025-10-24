@@ -2,10 +2,13 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
 const Result = () => {
 
   const { resultImage , image } = useContext(AppContext)
+
+  const navigate = useNavigate()
 
   return (
     <div className='mx-4 my-3 lg:mx-44 min-h-[75vh]'>
@@ -33,7 +36,7 @@ const Result = () => {
 
       {
         resultImage && <div className='flex justify-center sm:justify-end items-center flex-wrap gap-4 mt-6'>
-        <button className='px-8 py-2.5 text-violet-400 text-sm border border-violet-400 rounded-full hover:scale-105 transition-all duration-500'>Try another image</button>
+        <button  onClick={()=>navigate('/')} className='px-8 py-2.5 text-violet-400 text-sm border border-violet-400 rounded-full hover:scale-105 transition-all duration-500'>Try another image</button>
         <a href={resultImage} download className='px-8 py-2.5 text-sm text-white bg-gradient-to-r from-violet-600 to-fuchsia-500 rounded-full hover:scale-105 transition-all duration-500'>Download Image</a>
       </div>
       }

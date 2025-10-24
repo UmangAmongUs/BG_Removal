@@ -2,9 +2,9 @@ import React from 'react'
 import { testimonialsData } from '../assets/assets'
 
 const Testimonial = () => {
-  // testimonialsData.map((item)=>{
-  //   let a= item.jobTitle
-  // })
+testimonialsData.map((item)=>{
+  let a= item.jobTitle
+})
   return (
     <div className='pb-20'>
       <h1 className='mb-12 sm:mb-20 w-full h-22 text-center text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold bg-gradient-to-r from-gray-900 to-bg-gray-500 bg-clip-text text-transparent py-5'>

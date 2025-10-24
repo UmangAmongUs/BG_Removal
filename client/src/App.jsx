@@ -6,6 +6,7 @@ import Result from './pages/Result'
 import BuyCredit from './pages/BuyCredit'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { ToastContainer, toast } from 'react-toastify'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,9 +15,9 @@ function App() {
     
     <div className='min-h-screen bg-slate-50'> 
 
+      <ToastContainer position='bottom-right'/>
+
       <Navbar/>
-
-
 
       <Routes>
         <Route 

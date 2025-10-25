@@ -43,7 +43,7 @@ const Result = () => {
         <a href={resultImage} download className='px-8 py-2.5 text-sm text-white bg-gradient-to-r from-violet-600 to-fuchsia-500 rounded-full hover:scale-105 transition-all duration-500'>Download Image</a>
       </div>
       }
-      <ResultSlider/>
+     {resultImage && <ResultSlider/>}
     </div>
   )
 

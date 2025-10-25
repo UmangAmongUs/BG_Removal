@@ -160,7 +160,6 @@ const verifyRazorpay = async (req,res) =>{
       res.json({success:true,message:"Credit Added"})
     }
   } catch (error) {
-    console.log("jagdvc")
      console.log(error.message);
     res.json({ success: false, message: error.message });
   }
